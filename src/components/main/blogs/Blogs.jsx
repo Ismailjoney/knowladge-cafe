@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+ 
 import Blog from '../blog/Blog';
 
-const Blogs = ({ handdleAddToBookMark, handdleAddTime}) => {
-    const [blogs, setBlogs] = useState([])
-
-    useEffect(() => {
-        fetch(`knowladgeCafe.json`)
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+const Blogs = ({ handdleAddToBookMark, handdleAddTime, blogs}) => {
+    
     return (
         <div className='w-2/3  '>
             <h2 className='font-bold text-3xl m-2 '>Our Blogs</h2>

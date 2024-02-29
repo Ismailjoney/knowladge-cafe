@@ -1,11 +1,15 @@
 import React from 'react';
+import { AiOutlineDelete } from "react-icons/ai";
 
-const BlogCart = ({ blog }) => {
-    const { title, posted_date} = blog
+const BlogCart = ({ blog, handdleRemoveFormCart }) => {
+    const { title, posted_date ,id} = blog
     return (
-        <div className='border mt-6 px-4'>
-            <h4 className=' font-bold text-2xl'>{title}</h4>
-            <p>{posted_date}</p>
+        <div className='md:flex '>
+            <div className='border mt-6 px-4'>
+                <h4 className=' font-bold text-2xl'>{title}</h4>
+                <p>{posted_date}</p>
+            </div>
+            <button onClick={() => handdleRemoveFormCart(id)}><AiOutlineDelete  className='text-2xl font-bold'/></button>
         </div>
     );
 };

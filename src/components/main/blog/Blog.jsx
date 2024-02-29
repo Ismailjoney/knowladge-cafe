@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaRegBookmark } from "react-icons/fa6";
 
-const Blog = ({ blog , handdleAddToBookMark, handdleAddTime}) => {
-   
+const Blog = ({ blog, handdleAddToBookMark, handdleAddTime }) => {
+
     const { title, author, author_img, cover, id, posted_date, reading_time, hashtags } = blog
     return (
         <div className='mt-10 px-4'>
@@ -19,8 +19,8 @@ const Blog = ({ blog , handdleAddToBookMark, handdleAddTime}) => {
                         </div>
                     </div>
                     <div className='md:flex items-center '>
-                        <p className='px-2'>Time :{reading_time}</p>
-                        <button onClick={() => handdleAddToBookMark(blog)}>
+                        <p className='px-2'> {reading_time} min read</p>
+                        <button className='ml-2 text-2xl text-red-600 ' onClick={() => handdleAddToBookMark(blog)}>
                             <FaRegBookmark />
                         </button>
                     </div>
@@ -32,7 +32,8 @@ const Blog = ({ blog , handdleAddToBookMark, handdleAddTime}) => {
                 }
 
             </div>
-                <button onClick={() => handdleAddTime(id,reading_time)} className='mt-2 rounded border bg-red-400 px-2 font-bold'>Add Time</button>
+               
+            <button href="" onClick={() => handdleAddTime(id, reading_time)} className='mt-2 bg-red-700 text-white  px-2 border '> Mark As read</button> 
         </div>
     );
 };
