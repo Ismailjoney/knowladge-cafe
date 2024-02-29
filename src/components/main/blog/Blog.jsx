@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegBookmark } from "react-icons/fa6";
 
-const Blog = ({ blog , handdleAddToBookMark}) => {
+const Blog = ({ blog , handdleAddToBookMark, handdleAddTime}) => {
    
     const { title, author, author_img, cover, id, posted_date, reading_time, hashtags } = blog
     return (
@@ -32,7 +32,7 @@ const Blog = ({ blog , handdleAddToBookMark}) => {
                 }
 
             </div>
-
+                <button onClick={() => handdleAddTime(id,reading_time)} className='mt-2 rounded border bg-red-400 px-2 font-bold'>Add Time</button>
         </div>
     );
 };
